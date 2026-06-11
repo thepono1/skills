@@ -7,7 +7,7 @@ matters: orchestration, review, planning, validation, and clear communication.
 They are not a giant process framework. Install the pieces you want, adapt them
 to your project, and let the model keep room to think.
 
-Quick install all skills:
+### Quick install all skills
 
 ```sh
 npx @agent-native/skills add

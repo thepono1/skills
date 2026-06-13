@@ -8,6 +8,10 @@ custom components built for understanding: architecture diagrams, wireframes,
 interactive prototypes, file maps, annotated code, OpenAPI-style API specs,
 visual schema maps, open questions, and comments.
 
+<picture>
+  <img alt="Visual plan review surface" src="../../media/visual-plan.png">
+</picture>
+
 ## What It Does
 
 - Grounds plans in real repo files, schemas, actions, and symbols.

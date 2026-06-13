@@ -12,6 +12,10 @@ things raw diffs are bad at explaining: annotated diffs, diagrams, visual schema
 maps, OpenAPI-style API diffs, file maps, UI state summaries, and focused review
 notes.
 
+<picture>
+  <img alt="Visual recap review surface animation" src="../../media/visual-recap.gif">
+</picture>
+
 ## What It Does
 
 - Reads the actual changed files and diff.

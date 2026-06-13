@@ -62,6 +62,10 @@ Solves for plans that are too important to bury in chat. The output is
 scannable, commentable, and intuitive enough for a human to approve before code
 changes start.
 
+<picture>
+  <img alt="Visual plan review surface" src="media/visual-plan.png">
+</picture>
+
 ### [`/visual-recap`](skills/visual-recap/README.md)
 
 Turn a branch, commit, or PR diff into a human-optimized visual recap with MDX
@@ -71,6 +75,10 @@ file maps, and UI state summaries.
 Solves for diffs that hide the shape of the change. Reviewers can understand
 contracts, architecture moves, schema changes, and UI impact before diving into
 raw line-by-line review.
+
+<picture>
+  <img alt="Visual recap review surface animation" src="media/visual-recap.gif">
+</picture>
 
 ### [`/quick-recap`](skills/quick-recap/README.md)
 

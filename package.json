@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Public Builder skills for efficient frontier-model orchestration, clear status recaps, and Agent Native Plan workflows.",
+  "description": "Public Builder skills for docs-first discipline, efficient frontier-model orchestration, clear status recaps, and Agent Native Plan workflows.",
   "license": "MIT",
   "scripts": {
     "sync:agent-native-plan-skills": "node scripts/sync-agent-native-plan-skills.mjs",

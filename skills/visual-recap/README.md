@@ -48,6 +48,18 @@ Reviewers get the shape of the change first: what moved, which contracts
 changed, what data or API surfaces were touched, how UI states differ, and where
 the risky lines are. Then they can review the raw diff with a map in their head.
 
+## Modes
+
+`/visual-recap` can run in three modes:
+
+- **Hosted Plans, shareable links (recommended):** uses the free, open-source
+  Agent-Native plans app at plan.agent-native.com for shareable links, comments,
+  and the browser editor.
+- **Local files only:** writes `plans/<slug>/plan.mdx` in your repo and opens a
+  local preview. No sharing, all local.
+- **Self-hosted/custom URL:** connects the skill to your own Plan app or local
+  development tunnel.
+
 ## GitHub Action
 
 When installed with `--with-github-action`, this repo writes a PR workflow that
@@ -70,5 +82,8 @@ npx @agent-native/skills@latest add
 npx @agent-native/skills@latest add --skill visual-recap --with-github-action
 ```
 
-The skill expects the [Plan MCP connector](https://www.agent-native.com/docs/template-plan) to be available when it is used, unless
-local-files privacy mode is explicitly enabled.
+The installer asks which mode to use. To force the fully local mode directly:
+
+```sh
+npx @agent-native/skills@latest add --skill visual-recap --mode local-files
+```

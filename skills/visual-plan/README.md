@@ -53,15 +53,25 @@ The point is not just prettier planning. It is a better medium for human review:
 visual where visuals help, structured where structure helps, and grounded in the
 actual codebase.
 
+## Modes
+
+`/visual-plan` can run in three modes:
+
+- **Hosted Plans, shareable links (recommended):** uses the free, open-source
+  Agent-Native plans app at plan.agent-native.com for shareable links, comments,
+  and the browser editor.
+- **Local files only:** writes `plans/<slug>/plan.mdx` in your repo and opens a
+  local preview. No sharing, all local.
+- **Self-hosted/custom URL:** connects the skill to your own Plan app or local
+  development tunnel.
+
 ## Install
 
 ```sh
 npx @agent-native/skills@latest add --skill visual-plan
 ```
 
-The skill expects the [Plan MCP connector](https://www.agent-native.com/docs/template-plan) to be available when it is used, unless
-local-files privacy mode is explicitly enabled. For a fully local, no-account,
-no-sharing setup, install with local-files mode:
+The installer asks which mode to use. To force the fully local mode directly:
 
 ```sh
 npx @agent-native/skills@latest add --skill visual-plan --mode local-files

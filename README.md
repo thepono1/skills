@@ -3,9 +3,9 @@
 Small, composable skills for coding agents.
 
 These skills are for teams that want the agent to stay sharp where judgment
-matters: orchestration, review, planning, validation, and clear communication.
-They are not a giant process framework. Install the pieces you want, adapt them
-to your project, and let the model keep room to think.
+matters: orchestration, review, planning, validation, docs discipline, and clear
+communication. They are not a giant process framework. Install the pieces you
+want, adapt them to your project, and let the model keep room to think.
 
 ### Quick install all skills
 
@@ -111,6 +111,17 @@ Example yellow status:
 🟡 Code updated, set PROVIDER_WEBHOOK_SECRET before testing webhooks
 ```
 
+### [`/read-the-damn-docs`](skills/read-the-damn-docs/README.md)
+
+Make agents web-search for authoritative docs before they guess from stale model
+memory.
+
+Solves for version drift and API folklore: package installs, framework config,
+SDK imports, provider limits, auth, security, billing, data, migrations, deploys,
+and repo-specific contracts all require a docs pass before implementation. For
+external APIs and current product behavior, web search for official docs is
+usually the first move.
+
 ## Install
 
 Run the installer:
@@ -122,7 +133,9 @@ npx @agent-native/skills@latest add
 The installer walks you through the choices:
 
 - Which skills to install.
-- Codex, Claude Code, or both.
+- Where visual plans and recaps should live: hosted shareable links
+  (recommended), local files only, or a self-hosted/custom Plan app.
+- Agent Skills / Codex, Claude Code, or both.
 - User-level or project-level install.
 - Whether to add managed `AGENTS.md` / `CLAUDE.md` instruction blocks when the
   selected skills have always-on guidance.

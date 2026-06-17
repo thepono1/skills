@@ -1,7 +1,7 @@
 {
   "name": "builder-skills",
   "version": "0.0.0",
-  "description": "Public Builder skills for docs-first discipline, efficient frontier-model orchestration, clear status recaps, and Agent-Native Plan workflows.",
+  "description": "Public Builder skills for docs-first discipline, efficient agent workflows, clear status recaps, and Agent-Native Plan modes.",
   "author": {
     "name": "Builder.io",
     "url": "https://www.builder.io"
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Builder Skills",
     "shortDescription": "Builder skills for efficient agent workflows.",
-    "longDescription": "A small public skill collection for docs-first discipline, efficient frontier-model orchestration, clear status recaps, and synced Agent-Native Plan workflows.",
+    "longDescription": "A small public skill collection for docs-first discipline, efficient frontier-model orchestration, clear status recaps, and Agent-Native Plan workflows with hosted, local-files, or self-hosted modes.",
     "developerName": "Builder.io",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],

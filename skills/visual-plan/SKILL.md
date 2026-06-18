@@ -105,6 +105,47 @@ surface.
   a correction to an earlier draft inside the plan itself. Re-read the approved
   plan before major steps.
 
+## quant_v4 Codebase Grounding (fork overlay)
+
+This fork is tuned for the quant_v4 live trading system. Before drafting ANY
+plan in this repo, ground it in the real code and the trading rules:
+
+- **Privacy is mandatory.** This codebase holds real-money trading IP. Always
+  run in local-files mode — set `AGENT_NATIVE_PLANS_MODE=local-files` and write
+  plans to `plans/<slug>/plan.mdx` checked into the repo. NEVER call a hosted
+  Plan MCP tool (`create-visual-plan`, `update-visual-plan`, etc.) for trading
+  logic, strategy, capital, or position plans. Hosted publish is allowed only
+  for clearly non-sensitive infra/docs work, and only with explicit user opt-in.
+- **Run the Decision Frame before the plan.** For anything that creates systems,
+  changes architecture, or touches trading logic (Design mode), the plan must
+  walk the five steps in order: intent → risk (does it touch live money?) →
+  information gap → minimal structure → only then code. Make those five the
+  plan's opening spine, not an afterthought.
+- **Name the real anchors.** Lead each step with what it reuses from the actual
+  tree: risk via `kaleo/risk_engine.py`, `kaleo/position_sizing.py`,
+  `kaleo/circuit_breaker.py`; live state via `.kaleo/SHARED_STATE.json` (written
+  ONLY through `kaleo/shared_state_io.py`); capital via `capital.json` (the SSOT
+  for all dollar amounts); exchange config via `kaleo/exchanges.yaml`; context
+  via `kaleo/context_service.py`. Do not invent endpoints or dollar figures.
+- **Encode the risk gates as plan invariants.** Any plan touching sizing or
+  orders must state the controls explicitly: fractional Kelly 1-5% (negative
+  Kelly = zero allocation), Kelly-check-first then circuit-breaker-second, 5%
+  daily loss limit, 2% hard stop max, trailing stop at +0.5%, re-check price
+  within 0.5% of signal, `$10` min notional, szDecimals rounding. A plan that
+  changes execution without these named is incomplete.
+- **Never state a capital number from memory.** Any equity/PnL/position figure
+  in a plan must be live-fetched from the HL API (wallet
+  `0x4F62C8bF5473c6784b05D59AFe3AFc1D13921597`) or labelled cached-with-timestamp.
+- **Custom domain blocks (renderer fork).** Richer trading visuals require
+  forking the renderer (`BuilderIO/agent-native`, blocks under
+  `templates/plan/`, registry in `templates/plan/server/plan-block-registry.spec.ts`
+  + `templates/plan/actions/get-plan-blocks.ts`). High-value blocks to add:
+  `risk-gate` (Kelly→circuit-breaker sequence diagram), `backtest-metrics`
+  (Sharpe / DSR / PSR / max-drawdown card), `position-snapshot` (live HL
+  positions + PnL), `strategy-state-machine` (regime/flip/carry-gate transitions).
+  Until those exist, use the stock `diagram`, `data-model`, and `annotated-code`
+  blocks for the same content.
+
 ## Create A Structured Agent-Native Plan — Never Inline
 
 The deliverable is ALWAYS a structured Agent-Native Plan, not a chat-only plan.

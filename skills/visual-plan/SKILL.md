@@ -143,8 +143,13 @@ plan in this repo, ground it in the real code and the trading rules:
   `risk-gate` (Kelly→circuit-breaker sequence diagram), `backtest-metrics`
   (Sharpe / DSR / PSR / max-drawdown card), `position-snapshot` (live HL
   positions + PnL), `strategy-state-machine` (regime/flip/carry-gate transitions).
-  Until those exist, use the stock `diagram`, `data-model`, and `annotated-code`
-  blocks for the same content.
+- **Use the trading block library NOW.** `references/quant-blocks.md` in this
+  skill has ready-to-paste MDX for all four trading blocks, built only from
+  stock-renderer blocks (`diagram`, `mermaid`, `table`, `callout`,
+  `json-explorer`) so they render today without forking the renderer. READ it
+  before authoring any quant_v4 plan and copy the shapes verbatim, filling live
+  values. Native React versions live on the `agent-native` fork branch
+  `feat/quant-blocks`.
 
 ## Create A Structured Agent-Native Plan — Never Inline
 
